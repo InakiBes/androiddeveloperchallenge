@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    app:cardBackgroundColor="@color/white"
+    app:strokeColor="@color/primary"
+    app:strokeWidth="@dimen/wireCard"
+    app:cardCornerRadius="@dimen/radiusM"
+    android:id="@+id/box_item">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_sku"
+            style="@style/TitleH3Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:layout_marginStart="@dimen/big_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="T20006" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            style="@style/TitleH3Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/normal_margin"
+            app:layout_constraintEnd_toStartOf="@id/tv_currency"
+            app:layout_constraintTop_toTopOf="@id/box_item"
+            app:layout_constraintBottom_toBottomOf="@id/box_item"
+            tools:text="20.4" />
+
+        <TextView
+            android:id="@+id/tv_currency"
+            style="@style/TitleH3Bold"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/big_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/box_item"
+            app:layout_constraintBottom_toBottomOf="@id/box_item"
+            tools:text="USD" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

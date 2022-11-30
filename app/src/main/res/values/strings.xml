@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">bemobile</string>
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="exit">Salir</string>
+    <string name="are_you_sure_logout">¿Seguro que desea salir?</string>
+    <string name="connectivity_error">Connectivity Error</string>
+    <string name="server_error">\"Server Error: \"</string>
+    <string name="unknown_error">\"Unknown Error: \"</string>
 </resources>

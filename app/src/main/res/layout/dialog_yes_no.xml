@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="330dp"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/white"
+    app:strokeColor="@color/primary"
+    app:strokeWidth="@dimen/wireCard"
+    app:cardCornerRadius="@dimen/radiusM">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/box_dialog"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TitleH3Bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/large_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/box_dialog"
+            app:layout_constraintStart_toStartOf="@+id/box_dialog"
+            app:layout_constraintTop_toTopOf="@id/box_dialog"
+            tools:text="Política de privacidad" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            style="@style/Paragraph"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginEnd="@dimen/normal_margin"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/box_dialog"
+            app:layout_constraintStart_toStartOf="@+id/box_dialog"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="¿Seguro que quieres salir?"/>
+
+        <Button
+            android:id="@+id/bt_cancel"
+            style="@style/ButtonDialog"
+            android:text="@string/cancel"
+            android:layout_marginBottom="@dimen/normal_margin"
+            android:layout_marginTop="@dimen/normal_margin"
+            app:layout_constraintEnd_toEndOf="@id/box_dialog"
+            app:layout_constraintStart_toStartOf="@id/box_dialog"
+            app:layout_constraintTop_toBottomOf="@id/tv_info"
+            app:layout_constraintBottom_toTopOf="@id/bt_yes"/>
+
+        <Button
+            android:id="@+id/bt_yes"
+            style="@style/ButtonDialogBorder"
+            android:layout_marginBottom="@dimen/large_margin"
+            app:layout_constraintEnd_toEndOf="@id/box_dialog"
+            app:layout_constraintStart_toStartOf="@id/box_dialog"
+            app:layout_constraintTop_toBottomOf="@id/bt_cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="@string/accept"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
+
