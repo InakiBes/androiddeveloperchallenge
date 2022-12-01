@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (supportFragmentManager.backStackEntryCount == 1) {
+        if (supportFragmentManager.backStackEntryCount == 0) {
             showDialogConfirmation() {
                 finishAndRemoveTask()
             }

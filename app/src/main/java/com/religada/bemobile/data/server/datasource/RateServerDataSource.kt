@@ -17,7 +17,6 @@ class RateServerDataSource @Inject constructor() :
     override suspend fun findRates(): Either<ErrorApp, List<Rate>> = tryCall {
         ApiConnection.service
             .getRates()
-            .rates
             .toDomainModel()
     }
 }

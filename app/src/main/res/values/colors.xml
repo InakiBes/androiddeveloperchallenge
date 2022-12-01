@@ -8,7 +8,7 @@
     <!-- Colors -->
     <color name="primary">#F8AD0A</color>
     <color name="primaryLight">#F8AD0A</color>
-    <color name="primaryDark">#F8AD0A</color>
+    <color name="primaryDark">#BF8300</color>
     <color name="secondary">#9B9E3A</color>
     <color name="secondaryLight">#9B9E3A</color>
     <color name="secondaryDark">#626343</color>
@@ -24,17 +24,7 @@
     <color name="offWhite">#FCFCFC</color>
     <color name="beige">#EFE2D0</color>
 
-    <color name="greenDark01">#8C934D</color>
-    <color name="greenDark02">#707757</color>
-    <color name="greenDark03">#626343</color>
-
     <color name="redDark">#BB2917</color>
     <color name="redApple">#CC4918</color>
     <color name="redLight">#D98D7C</color>
-
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
 </resources>

@@ -26,11 +26,11 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private fun setDataOnScreen() {
         // TODO RECUPERAR
-        viewLifecycleOwner.launchAndCollect(viewModel.state) { state ->
-            if (state.rate != null) {
-                //binding = state.
-            }
-        }
+//        viewLifecycleOwner.launchAndCollect(viewModel.state) { state ->
+//            if (state.rate != null) {
+//                //binding = state.
+//            }
+//        }
     }
 
     private fun setBackNavigation() {

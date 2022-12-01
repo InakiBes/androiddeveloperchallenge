@@ -21,6 +21,7 @@ class MainState(
     private val scope: CoroutineScope,
     private val navController: NavController,
 ) {
+
     fun onSkuClicked(sku: String) {
         val action = MainFragmentDirections.actionMainToDetail(sku)
         navController.navigate(action)

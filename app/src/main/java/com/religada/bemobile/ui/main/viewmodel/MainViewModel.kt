@@ -17,8 +17,8 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     getRatesUseCase: GetRatesUseCase,
     private val requestRatesUseCase: RequestRatesUseCase,
-    getTransactionsUseCase: GetTransactionsUseCase,
-    private val requestTransactionsUseCase: RequestTransactionsUseCase
+   /* getTransactionsUseCase: GetTransactionsUseCase,
+    private val requestTransactionsUseCase: RequestTransactionsUseCase*/
     ): ViewModel() {
 
     private val _state = MutableStateFlow(UiState())
@@ -29,9 +29,9 @@ class MainViewModel @Inject constructor(
             getRatesUseCase()
                 .catch { cause -> _state.update { it.copy(errorApp = cause.toError()) } }
                 .collect { rates -> _state.update { UiState(rates = rates) } }
-            getTransactionsUseCase()
+           /* getTransactionsUseCase()
                 .catch { cause -> _state.update { it.copy(errorApp = cause.toError()) } }
-                .collect { rates -> _state.update { UiState(transactions = rates) } }
+                .collect { rates -> _state.update { UiState(transactions = rates) } }*/
         }
     }
 
