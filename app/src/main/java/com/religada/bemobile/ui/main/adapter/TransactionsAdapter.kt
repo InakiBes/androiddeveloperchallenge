@@ -6,10 +6,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.religada.bemobile.R
 import com.religada.bemobile.databinding.ItemTransactionBinding
-import com.religada.bemobile.domain.Rate
 import com.religada.bemobile.domain.Transaction
-import com.religada.bemobile.ui.common.inflate
 import com.religada.bemobile.ui.common.basicDiffUtilApp
+import com.religada.bemobile.ui.common.inflate
 
 class TransactionsAdapter(private val listener: (String) -> Unit) :
     ListAdapter<Transaction, TransactionsAdapter.ViewHolder>(basicDiffUtilApp { old, new -> old.id == new.id }) {
@@ -25,8 +24,10 @@ class TransactionsAdapter(private val listener: (String) -> Unit) :
         holder.itemView.setOnClickListener { listener(transaction.sku) }
     }
 
-    fun setUpdatedData(items: List<Transaction>) {
-        this.submitList(items)
+    fun setUpdatedData(items: List<Transaction>?) {
+        items?.let {
+            this.submitList(items)
+        }
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

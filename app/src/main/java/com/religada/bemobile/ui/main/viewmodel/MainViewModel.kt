@@ -7,38 +7,64 @@ import com.religada.bemobile.domain.ErrorApp
 import com.religada.bemobile.domain.Rate
 import com.religada.bemobile.domain.Transaction
 import com.religada.bemobile.domain.usecase.GetRatesUseCase
+import com.religada.bemobile.domain.usecase.GetTransactionsUseCase
 import com.religada.bemobile.domain.usecase.RequestRatesUseCase
+import com.religada.bemobile.domain.usecase.RequestTransactionsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    getRatesUseCase: GetRatesUseCase,
+    private val getRatesUseCase: GetRatesUseCase,
     private val requestRatesUseCase: RequestRatesUseCase,
-   /* getTransactionsUseCase: GetTransactionsUseCase,
-    private val requestTransactionsUseCase: RequestTransactionsUseCase*/
+    private val getTransactionsUseCase: GetTransactionsUseCase,
+    private val requestTransactionsUseCase: RequestTransactionsUseCase
     ): ViewModel() {
 
     private val _state = MutableStateFlow(UiState())
     val state: StateFlow<UiState> = _state.asStateFlow()
 
     init {
+        launchGetRatesUseCase()
+        launchGeTransactionsUseCase()
+    }
+
+    private fun launchGetRatesUseCase() {
         viewModelScope.launch {
             getRatesUseCase()
                 .catch { cause -> _state.update { it.copy(errorApp = cause.toError()) } }
                 .collect { rates -> _state.update { UiState(rates = rates) } }
-           /* getTransactionsUseCase()
+        }
+    }
+
+    private fun launchGeTransactionsUseCase() {
+        viewModelScope.launch {
+            getTransactionsUseCase()
                 .catch { cause -> _state.update { it.copy(errorApp = cause.toError()) } }
-                .collect { rates -> _state.update { UiState(transactions = rates) } }*/
+                .collect { transactions -> _state.update { UiState(transactions = transactions) } }
         }
     }
 
     fun onUiReady() {
+        launchRequestRateUseCase()
+        launchRequesTransactionsUseCase()
+    }
+
+    private fun launchRequestRateUseCase() {
         viewModelScope.launch {
             _state.value = _state.value.copy(downloading = true)
             val error = requestRatesUseCase()
+            _state.update { _state.value.copy(downloading = false, errorApp = error) }
+        }
+    }
+
+    private fun launchRequesTransactionsUseCase() {
+        viewModelScope.launch {
+            _state.value = _state.value.copy(downloading = true)
+            val error = requestTransactionsUseCase()
             _state.update { _state.value.copy(downloading = false, errorApp = error) }
         }
     }

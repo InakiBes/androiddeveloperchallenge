@@ -8,4 +8,6 @@
     <string name="server_error">\"Server Error: \"</string>
     <string name="unknown_error">\"Unknown Error: \"</string>
     <string name="error">Error</string>
+    <string name="downloading">Descargando...</string>
+    <string name="rates_downloaded">Cambios de divisa descargados</string>
 </resources>

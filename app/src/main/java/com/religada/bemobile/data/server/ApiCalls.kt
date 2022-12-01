@@ -1,9 +1,8 @@
 package com.religada.bemobile.data.server
 
 import com.religada.bemobile.data.server.response.RateResponse
-import com.religada.bemobile.data.server.response.RatesResponse
-import com.religada.bemobile.data.server.response.TransactionsResponse
-import retrofit2.Response
+import com.religada.bemobile.data.server.response.TransactionResponse
+
 import retrofit2.http.GET
 
 interface ApiCalls {
@@ -13,6 +12,6 @@ interface ApiCalls {
 
     @GET("transactions.json")
     suspend fun getTransactions(
-    ): TransactionsResponse
+    ): List<TransactionResponse>
 }
 

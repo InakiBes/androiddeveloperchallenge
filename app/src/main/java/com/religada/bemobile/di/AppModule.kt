@@ -2,11 +2,15 @@ package com.religada.bemobile.di
 
 import android.app.Application
 import androidx.room.Room
-import com.religada.bemobile.data.datasource.RateLocalDataSource
-import com.religada.bemobile.data.datasource.RateRemoteDataSource
+import com.religada.bemobile.data.datasource.RatesLocalDataSource
+import com.religada.bemobile.data.datasource.RatesRemoteDataSource
 import com.religada.bemobile.data.database.AppDatabase
-import com.religada.bemobile.data.database.datasource.RateRoomDataSource
-import com.religada.bemobile.data.server.datasource.RateServerDataSource
+import com.religada.bemobile.data.database.datasource.RatesRoomDataSource
+import com.religada.bemobile.data.database.datasource.TransactionsRoomDataSource
+import com.religada.bemobile.data.datasource.TransactionsLocalDataSource
+import com.religada.bemobile.data.datasource.TransactionsRemoteDataSource
+import com.religada.bemobile.data.server.datasource.RatesServerDataSource
+import com.religada.bemobile.data.server.datasource.TransactionsServerDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -40,9 +44,15 @@ object AppModule {
 abstract class AppDataModule {
 
     @Binds
-    abstract fun bindLocalDataSource(localDataSource: RateRoomDataSource): RateLocalDataSource
+    abstract fun bindRatesLocalDataSource(localDataSource: RatesRoomDataSource): RatesLocalDataSource
 
     @Binds
-    abstract fun bindRemoteDataSource(remoteDataSource: RateServerDataSource): RateRemoteDataSource
+    abstract fun bindRatesRemoteDataSource(remoteDataSource: RatesServerDataSource): RatesRemoteDataSource
+
+    @Binds
+    abstract fun bindTransactionsLocalDataSource(localDataSource: TransactionsRoomDataSource): TransactionsLocalDataSource
+
+    @Binds
+    abstract fun bindTransactionsRemoteDataSource(remoteDataSource: TransactionsServerDataSource): TransactionsRemoteDataSource
 
 }

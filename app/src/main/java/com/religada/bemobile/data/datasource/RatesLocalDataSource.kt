@@ -4,7 +4,7 @@ import com.religada.bemobile.domain.ErrorApp
 import com.religada.bemobile.domain.Rate
 import kotlinx.coroutines.flow.Flow
 
-interface RateLocalDataSource {
+interface RatesLocalDataSource {
     val rates: Flow<List<Rate>>
 
     suspend fun isEmpty(): Boolean
