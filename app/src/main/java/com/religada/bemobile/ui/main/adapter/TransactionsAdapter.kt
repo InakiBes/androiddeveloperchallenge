@@ -9,6 +9,7 @@ import com.religada.bemobile.databinding.ItemTransactionBinding
 import com.religada.bemobile.domain.model.Transaction
 import com.religada.bemobile.ui.common.basicDiffUtilApp
 import com.religada.bemobile.ui.common.inflate
+import com.religada.bemobile.utils.round
 
 class TransactionsAdapter(private val listener: (String) -> Unit) :
     ListAdapter<Transaction, TransactionsAdapter.ViewHolder>(basicDiffUtilApp { old, new -> old.id == new.id }) {
@@ -38,7 +39,7 @@ class TransactionsAdapter(private val listener: (String) -> Unit) :
 
         fun bind(transaction: Transaction) {
             binding.tvSku.text = transaction.sku
-            binding.tvAmount.text = transaction.amount.toString()
+            binding.tvAmount.text = transaction.amount.round(2).toString()
             binding.tvCurrency.text = transaction.currency
         }
     }

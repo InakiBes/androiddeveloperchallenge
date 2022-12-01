@@ -13,7 +13,7 @@ class RatesRepository @Inject constructor(
 ) {
     val rates = localDataSource.rates
 
-    fun findByFromTo(from: String, to: String): Double = localDataSource.findByFromTo(from, to)
+    fun findByFromTo(from: String, to: String): Double? = localDataSource.findByFromTo(from, to)
 
     suspend fun requestRates(): ErrorApp? {
         if (localDataSource.isEmpty()) {

@@ -11,4 +11,5 @@
     <string name="downloading">Descargando...</string>
     <string name="rates_downloaded">Cambios de divisa descargados</string>
     <string name="total_transactions">El total de transaciones realizadas con sku %1$s asciende a %2$s euros</string>
+    <string name="rate_unavailable">El factor de conversión no está disponible</string>
 </resources>

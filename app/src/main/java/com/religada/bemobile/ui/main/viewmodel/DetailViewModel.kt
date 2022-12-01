@@ -3,9 +3,8 @@ package com.religada.bemobile.ui.main.viewmodel
 import androidx.lifecycle.*
 import com.religada.bemobile.domain.ErrorApp
 import com.religada.bemobile.domain.model.Transaction
-import com.religada.bemobile.domain.usecase.ConvertToEurUseCase
+import com.religada.bemobile.domain.usecase.GetRateToEurUseCase
 import com.religada.bemobile.domain.usecase.TransactionsBySkuUseCase
-import com.religada.bemobile.ui.common.launchAndCollect
 import com.religada.bemobile.ui.main.fragment.DetailFragmentArgs
 import com.religada.bemobile.utils.log
 import com.religada.bemobile.utils.round
@@ -19,7 +18,7 @@ import javax.inject.Inject
 class DetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     transactionsBySkuUseCase: TransactionsBySkuUseCase,
-    private val convertToEurUseCase: ConvertToEurUseCase
+    private val getRateToEurUseCase: GetRateToEurUseCase
 ) : ViewModel() {
 
     private val sku = DetailFragmentArgs.fromSavedStateHandle(savedStateHandle).sku
@@ -37,20 +36,20 @@ class DetailViewModel @Inject constructor(
         }
     }
 
-    fun calculateTotalTransactions(transactions: List<Transaction>?) {
+    private fun calculateTotalTransactions(transactions: List<Transaction>?) {
         viewModelScope.launch(Dispatchers.IO) {
             var amountTotal = 0.0
             transactions?.forEach { transaction ->
-                val rate: Double = convertToEurUseCase(transaction) //.collect { rate ->
-                amountTotal += rate * transaction.amount
+                val rate: Double? = getRateToEurUseCase(transaction)
+                rate?.let {
+                    amountTotal += it * transaction.amount
+                } ?: _state.update { UiState(error = ErrorApp.Unknown("")) }
             }
             _state.update { UiState(totalTransactions = amountTotal.round(2)) }
-            log("Total $amountTotal")
         }
     }
 
     fun onUiReady() {
-        log("sku recibido en DetailViewModel $sku")
     }
 
     data class UiState(

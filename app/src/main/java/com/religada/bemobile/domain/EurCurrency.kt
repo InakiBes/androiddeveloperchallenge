@@ -1,7 +1,5 @@
 package com.religada.bemobile.domain
 
-enum class Currencies {
+enum class EurCurrency {
     EUR,
-    CAD,
-    USD,
 }

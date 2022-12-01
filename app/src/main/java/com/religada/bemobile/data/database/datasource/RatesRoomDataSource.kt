@@ -17,7 +17,9 @@ class RatesRoomDataSource @Inject constructor(private val ratesDao: RatesDao) : 
 
     override suspend fun isEmpty(): Boolean = ratesDao.rateCount() == 0
 
-    override fun findByFromTo(from: String, to: String): Double = ratesDao.findByFromTo(from, to)
+    override fun findByFromTo(from: String, to: String): Double? = ratesDao.findByFromTo(from, to)
+
+    override fun findByFromToAny(from: String): List<Rate>? = ratesDao.findByFromToAny(from)
 
     override suspend fun save(rates: List<Rate>): ErrorApp? = tryCall {
         ratesDao.insertRates(rates.fromDomainModel())

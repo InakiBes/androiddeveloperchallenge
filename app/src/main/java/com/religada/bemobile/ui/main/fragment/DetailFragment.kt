@@ -8,6 +8,7 @@ import com.religada.bemobile.R
 import com.religada.bemobile.databinding.FragmentDetailBinding
 import com.religada.bemobile.ui.common.launchAndCollect
 import com.religada.bemobile.ui.main.viewmodel.DetailViewModel
+import com.religada.bemobile.utils.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,7 +28,12 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
     private fun setDataOnScreen() {
         viewLifecycleOwner.launchAndCollect(viewModel.state) {
-            binding.resumeDetail.text = resources.getString(R.string.total_transactions,viewModel.getSku(),  it.totalTransactions.toString())
+            it.totalTransactions?.let { totalTransactions ->
+                binding.resumeDetail.text = resources.getString(R.string.total_transactions,viewModel.getSku(), totalTransactions.toString())
+            }
+            it.error?.let {
+                showSnackBar(view, resources.getString(R.string.rate_unavailable))
+            }
         }
     }
 

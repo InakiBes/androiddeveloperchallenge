@@ -6,11 +6,11 @@ import com.religada.bemobile.data.server.response.TransactionResponse
 import retrofit2.http.GET
 
 interface ApiCalls {
-    @GET("rates.json")
+    @GET("rates")
     suspend fun getRates(
        ): List<RateResponse>
 
-    @GET("transactions.json")
+    @GET("transactions")
     suspend fun getTransactions(
     ): List<TransactionResponse>
 }
