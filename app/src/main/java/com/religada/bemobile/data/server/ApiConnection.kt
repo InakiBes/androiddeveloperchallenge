@@ -12,13 +12,11 @@ import java.util.concurrent.TimeUnit
 
 object ApiConnection {
 
-    //jsconConverter
     private val jsonConverter = GsonBuilder()
         .setLenient()
         .disableHtmlEscaping()
         .create()
 
-    //Client without Authentication
     private val okHttpClient: OkHttpClient = OkHttpClient().newBuilder()
         .connectTimeout(60L, TimeUnit.SECONDS)
         .readTimeout(30L, TimeUnit.SECONDS)

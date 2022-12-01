@@ -28,6 +28,10 @@
         <item name="android:textColor">@color/body</item>
     </style>
 
+    <style name="BodyL" parent="Body">
+        <item name="android:textSize">@dimen/bodyL</item>
+    </style>
+
     <style name="Paragraph" parent="Body">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>

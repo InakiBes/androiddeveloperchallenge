@@ -24,7 +24,9 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private lateinit var binding: FragmentMainBinding
     private val viewModel: MainViewModel by viewModels()
     private lateinit var mainState: MainState
-    private val adapterList = TransactionsAdapter { mainState.onSkuClicked(it) }
+    private val adapterList = TransactionsAdapter {
+        mainState.onSkuClicked(it)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -6,7 +6,7 @@ import com.religada.bemobile.data.datasource.tryCall
 import com.religada.bemobile.data.server.ApiConnection
 import com.religada.bemobile.data.server.mapper.toDomainModel
 import com.religada.bemobile.domain.ErrorApp
-import com.religada.bemobile.domain.Transaction
+import com.religada.bemobile.domain.model.Transaction
 import javax.inject.Inject
 
 class TransactionsServerDataSource @Inject constructor() :

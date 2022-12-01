@@ -1,7 +1,7 @@
 package com.religada.bemobile.data.datasource
 
 import com.religada.bemobile.domain.ErrorApp
-import com.religada.bemobile.domain.Transaction
+import com.religada.bemobile.domain.model.Transaction
 import kotlinx.coroutines.flow.Flow
 
 interface TransactionsLocalDataSource {

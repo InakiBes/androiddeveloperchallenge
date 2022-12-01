@@ -1,4 +1,4 @@
-package com.religada.bemobile.domain
+package com.religada.bemobile.domain.model
 
 data class Rate(
     val id: Int = -1,

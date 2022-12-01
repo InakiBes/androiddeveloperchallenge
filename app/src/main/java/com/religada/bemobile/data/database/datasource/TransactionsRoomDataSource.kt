@@ -6,7 +6,7 @@ import com.religada.bemobile.data.database.mapper.toDomainModel
 import com.religada.bemobile.data.datasource.TransactionsLocalDataSource
 import com.religada.bemobile.data.datasource.tryCall
 import com.religada.bemobile.domain.ErrorApp
-import com.religada.bemobile.domain.Transaction
+import com.religada.bemobile.domain.model.Transaction
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject

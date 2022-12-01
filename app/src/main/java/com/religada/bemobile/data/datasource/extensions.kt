@@ -4,7 +4,6 @@ import arrow.core.Either
 import arrow.core.left
 import arrow.core.right
 import com.religada.bemobile.domain.ErrorApp
-import com.religada.bemobile.domain.Rate
 import retrofit2.HttpException
 import java.io.IOException
 

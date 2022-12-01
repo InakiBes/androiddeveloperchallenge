@@ -13,8 +13,8 @@ interface RatesDao {
     @Query("SELECT * FROM RateRoom")
     fun getAll(): Flow<List<RateRoom>>
 
-    @Query("SELECT * FROM RateRoom WHERE `from` = :from AND `to` = :to")
-    fun findByFromTo(from: String, to: String): Flow<RateRoom>
+    @Query("SELECT rate FROM RateRoom WHERE `from` = :from AND `to` = :to")
+    fun findByFromTo(from: String, to: String): Double
 
     @Query("SELECT COUNT(id) FROM RateRoom")
     suspend fun rateCount(): Int

@@ -3,7 +3,7 @@ package com.religada.bemobile.data.repository
 import com.religada.bemobile.data.datasource.RatesLocalDataSource
 import com.religada.bemobile.data.datasource.RatesRemoteDataSource
 import com.religada.bemobile.domain.ErrorApp
-import com.religada.bemobile.domain.Rate
+import com.religada.bemobile.domain.model.Rate
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -13,7 +13,7 @@ class RatesRepository @Inject constructor(
 ) {
     val rates = localDataSource.rates
 
-    fun findByFromTo(from: String, to: String): Flow<Rate> = localDataSource.findByFromTo(from, to)
+    fun findByFromTo(from: String, to: String): Double = localDataSource.findByFromTo(from, to)
 
     suspend fun requestRates(): ErrorApp? {
         if (localDataSource.isEmpty()) {

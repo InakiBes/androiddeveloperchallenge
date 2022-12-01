@@ -40,11 +40,12 @@
 
                 <TextView
                     android:id="@+id/resume_detail"
+                    style="@style/Body"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:padding="16dp"
-                    android:text="testo provisional"
+                    tools:text="Total: T2006 - 34.0 EUR"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             </LinearLayout>

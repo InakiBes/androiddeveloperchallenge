@@ -20,17 +20,15 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDetailBinding.bind(view)
 
-        setBackNavigation()
         setDataOnScreen()
+        setBackNavigation()
+        viewModel.onUiReady()
     }
 
     private fun setDataOnScreen() {
-        // TODO RECUPERAR
-//        viewLifecycleOwner.launchAndCollect(viewModel.state) { state ->
-//            if (state.rate != null) {
-//                //binding = state.
-//            }
-//        }
+        viewLifecycleOwner.launchAndCollect(viewModel.state) {
+            binding.resumeDetail.text = resources.getString(R.string.total_transactions,viewModel.getSku(),  it.totalTransactions.toString())
+        }
     }
 
     private fun setBackNavigation() {

@@ -10,4 +10,5 @@
     <string name="error">Error</string>
     <string name="downloading">Descargando...</string>
     <string name="rates_downloaded">Cambios de divisa descargados</string>
+    <string name="total_transactions">El total de transaciones realizadas con sku %1$s asciende a %2$s euros</string>
 </resources>

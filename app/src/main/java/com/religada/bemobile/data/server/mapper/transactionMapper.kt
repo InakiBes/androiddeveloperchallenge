@@ -1,7 +1,7 @@
 package com.religada.bemobile.data.server.mapper
 
 import com.religada.bemobile.data.server.response.TransactionResponse
-import com.religada.bemobile.domain.Transaction
+import com.religada.bemobile.domain.model.Transaction
 
 fun List<TransactionResponse>.toDomainModel(): List<Transaction> = map { it.toDomainModel() }
 

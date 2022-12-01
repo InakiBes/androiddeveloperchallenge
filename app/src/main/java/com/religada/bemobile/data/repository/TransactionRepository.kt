@@ -3,7 +3,7 @@ package com.religada.bemobile.data.repository
 import com.religada.bemobile.data.datasource.TransactionsLocalDataSource
 import com.religada.bemobile.data.datasource.TransactionsRemoteDataSource
 import com.religada.bemobile.domain.ErrorApp
-import com.religada.bemobile.domain.Transaction
+import com.religada.bemobile.domain.model.Transaction
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
