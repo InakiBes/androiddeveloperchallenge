@@ -1,8 +1,8 @@
-package com.religada.bemobile.data.database.datasource
+package com.religada.bemobile.data.database.rates
 
 import com.religada.bemobile.data.datasource.RatesLocalDataSource
 import com.religada.bemobile.data.datasource.tryCall
-import com.religada.bemobile.data.database.dao.RatesDao
+import com.religada.bemobile.data.database.rates.RatesDao
 import com.religada.bemobile.data.database.mapper.fromDomainModel
 import com.religada.bemobile.data.database.mapper.toDomainModel
 import com.religada.bemobile.domain.ErrorApp

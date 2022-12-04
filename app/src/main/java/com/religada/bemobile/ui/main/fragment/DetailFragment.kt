@@ -29,7 +29,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     private fun setDataOnScreen() {
         viewLifecycleOwner.launchAndCollect(viewModel.state) {
             it.totalTransactions?.let { totalTransactions ->
-                binding.resumeDetail.text = resources.getString(R.string.total_transactions,viewModel.getSku(), totalTransactions.toString())
+                binding.resumeDetail.text = resources.getString(R.string.total_transactions, viewModel.getSku(), totalTransactions.toString())
             }
             it.error?.let {
                 showSnackBar(view, resources.getString(R.string.rate_unavailable))

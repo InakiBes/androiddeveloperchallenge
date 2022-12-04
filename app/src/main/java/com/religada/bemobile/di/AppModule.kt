@@ -5,8 +5,8 @@ import androidx.room.Room
 import com.religada.bemobile.data.datasource.RatesLocalDataSource
 import com.religada.bemobile.data.datasource.RatesRemoteDataSource
 import com.religada.bemobile.data.database.AppDatabase
-import com.religada.bemobile.data.database.datasource.RatesRoomDataSource
-import com.religada.bemobile.data.database.datasource.TransactionsRoomDataSource
+import com.religada.bemobile.data.database.rates.RatesRoomDataSource
+import com.religada.bemobile.data.database.transaction.TransactionsRoomDataSource
 import com.religada.bemobile.data.datasource.TransactionsLocalDataSource
 import com.religada.bemobile.data.datasource.TransactionsRemoteDataSource
 import com.religada.bemobile.data.server.datasource.RatesServerDataSource

@@ -1,16 +1,20 @@
 package com.religada.bemobile.ui.main.viewmodel
 
-import androidx.lifecycle.*
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.religada.bemobile.domain.ErrorApp
 import com.religada.bemobile.domain.model.Transaction
 import com.religada.bemobile.domain.usecase.GetRateToEurUseCase
 import com.religada.bemobile.domain.usecase.TransactionsBySkuUseCase
 import com.religada.bemobile.ui.main.fragment.DetailFragmentArgs
-import com.religada.bemobile.utils.log
 import com.religada.bemobile.utils.round
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -29,10 +33,10 @@ class DetailViewModel @Inject constructor(
 
     init {
         viewModelScope.launch(Dispatchers.Main) {
-            transactionsBySkuUseCase(sku).collect { trans ->
+           transactionsBySkuUseCase(sku).collect { trans ->
                 _state.update { UiState(transactions = trans) }
                 calculateTotalTransactions(trans)
-            }
+           }
         }
     }
 

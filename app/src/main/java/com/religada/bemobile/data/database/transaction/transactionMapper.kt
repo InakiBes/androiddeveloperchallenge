@@ -1,6 +1,6 @@
 package com.religada.bemobile.data.database.mapper
 
-import com.religada.bemobile.data.database.model.TransactionRoom
+import com.religada.bemobile.data.database.transaction.TransactionRoom
 import com.religada.bemobile.domain.model.Transaction
 
 fun List<TransactionRoom>.toDomainModel(): List<Transaction> = map { it.toDomainModel() }

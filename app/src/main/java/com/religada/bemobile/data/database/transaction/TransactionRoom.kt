@@ -1,4 +1,4 @@
-package com.religada.bemobile.data.database.model
+package com.religada.bemobile.data.database.transaction
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

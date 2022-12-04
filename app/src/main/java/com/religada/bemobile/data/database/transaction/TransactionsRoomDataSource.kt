@@ -1,6 +1,5 @@
-package com.religada.bemobile.data.database.datasource
+package com.religada.bemobile.data.database.transaction
 
-import com.religada.bemobile.data.database.dao.TransactionsDao
 import com.religada.bemobile.data.database.mapper.fromDomainModel
 import com.religada.bemobile.data.database.mapper.toDomainModel
 import com.religada.bemobile.data.datasource.TransactionsLocalDataSource

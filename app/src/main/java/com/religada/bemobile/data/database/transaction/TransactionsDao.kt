@@ -1,7 +1,6 @@
-package com.religada.bemobile.data.database.dao
+package com.religada.bemobile.data.database.transaction
 
 import androidx.room.*
-import com.religada.bemobile.data.database.model.TransactionRoom
 import kotlinx.coroutines.flow.Flow
 
 @Dao

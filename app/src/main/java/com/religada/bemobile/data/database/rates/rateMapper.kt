@@ -1,6 +1,6 @@
 package com.religada.bemobile.data.database.mapper
 
-import com.religada.bemobile.data.database.model.RateRoom
+import com.religada.bemobile.data.database.rates.RateRoom
 import com.religada.bemobile.domain.model.Rate
 
 fun List<RateRoom>.toDomainModel(): List<Rate> = map { it.toDomainModel() }
