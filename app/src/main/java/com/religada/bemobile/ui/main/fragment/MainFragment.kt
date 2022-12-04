@@ -60,7 +60,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         viewLifecycleOwner.launchAndCollect(viewModel.state) {
             binding.progress.isVisible = it.downloading
             adapterList.setUpdatedData(it.transactions)
-            showErrorDialog(it.errorApp?.let(mainState::errorToString))
+            showErrorDialog( it.errorApp?.let(mainState::errorToString))
         }
     }
 

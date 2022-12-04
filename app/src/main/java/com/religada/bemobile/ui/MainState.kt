@@ -12,13 +12,11 @@ import com.religada.bemobile.ui.main.fragment.MainFragmentDirections
 
 fun Fragment.buildMainState(
     context: Context = requireContext(),
-    scope: CoroutineScope = viewLifecycleOwner.lifecycleScope,
     navController: NavController = findNavController(),
-) = MainState(context, scope, navController)
+) = MainState(context, navController)
 
 class MainState(
     private val context: Context,
-    private val scope: CoroutineScope,
     private val navController: NavController,
 ) {
 
