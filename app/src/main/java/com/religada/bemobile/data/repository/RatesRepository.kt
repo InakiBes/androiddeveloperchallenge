@@ -4,7 +4,6 @@ import com.religada.bemobile.data.datasource.RatesLocalDataSource
 import com.religada.bemobile.data.datasource.RatesRemoteDataSource
 import com.religada.bemobile.domain.ErrorApp
 import com.religada.bemobile.domain.model.Rate
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class RatesRepository @Inject constructor(
@@ -14,6 +13,8 @@ class RatesRepository @Inject constructor(
     val rates = localDataSource.rates
 
     fun findByFromTo(from: String, to: String): Double? = localDataSource.findByFromTo(from, to)
+
+    fun findByFromToAny(from: String): List<Rate>? = localDataSource.findByFromToAny(from)
 
     suspend fun requestRates(): ErrorApp? {
         if (localDataSource.isEmpty()) {

@@ -1,13 +1,14 @@
 package com.religada.bemobile.domain.usecase
 
 import com.religada.bemobile.data.datasource.RatesLocalDataSource
+import com.religada.bemobile.data.repository.RatesRepository
 import com.religada.bemobile.domain.EurCurrency
 import com.religada.bemobile.domain.model.Rate
 import com.religada.bemobile.domain.model.Transaction
 import javax.inject.Inject
 
 class GetRateToEurUseCase @Inject constructor(
-    private val repository: RatesLocalDataSource
+    private val repository: RatesRepository
 ) {
     operator fun invoke(transaction: Transaction): Double? {
         if(transaction.currency == EurCurrency.EUR.toString())
